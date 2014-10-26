@@ -14,6 +14,8 @@ use_ahead=true
 api_key=YOUR_AHEAD_API_KEY
 ```
 
+One thing to remember when using ahead with publicizr is that it uses the default social accounts that you have selected on your settings page. So be sure to select a default account if you haven't done so.
+
 The second option is by creating an app for whichever social accounts you want to connect, get the api credentials for those and add them to the `user.ini` file:
 
 ```
