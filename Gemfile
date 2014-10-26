@@ -18,6 +18,7 @@ group :development do
   gem 'twitter', '~> 5.11.0'
   gem 'koala', '~> 1.10.1'
   gem 'em-resolv-replace', '~> 1.1.3'
+  gem 'inifile', '~> 3.0.0'
 end
 
 gem 'sinatra', '~> 1.4.2'
