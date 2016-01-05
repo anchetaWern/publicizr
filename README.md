@@ -6,21 +6,23 @@ You can find the dependencies of this project in the `Gemfile`. Just add those t
 
 ###Setup
 
-You can setup publicizr in two ways: first is by creating an [ahead account](http://ec2-54-68-251-216.us-west-2.compute.amazonaws.com/). Once you have created an account and connected your social accounts. Go to the settings page and copy your API key and add it as a value for the `api_key`. Be sure to set the value for `use_ahead` as `true` if you want to use your ahead account for publishing:
+You can setup publicizr in two ways: first is by setting up the [ahead project](http://github.com/anchetaWern/ahead) on your machine. Once you have created an account and connected your social accounts. Go to the settings page and copy your API key and add it as a value for the `api_key`. Be sure to set the value for `use_ahead` as `true` if you want to use your ahead account for publishing:
 
 ```
 [user]
 use_ahead=true
 api_key=YOUR_AHEAD_API_KEY
+ahead_base_url=http://ahead.dev
 ```
 
 One thing to remember when using ahead with publicizr is that it uses the default social accounts that you have selected on your settings page. So be sure to select a default account if you haven't done so.
 
-The second option is by creating an app for whichever social accounts you want to connect, get the api credentials for those and add them to the `user.ini` file:
+The second option is by acquiring an oauth token for each social accounts you want to connect, get the API credentials for those and add them to the `user.ini` file:
 
 ```
 [user]
 use_ahead=false
+ahead_base_url=http://ahead.dev
 api_key=YOUR_AHEAD_API_KEY
 twitter_api=YOUR_TWITTER_API_KEY
 twitter_secret=YOUR_TWITTER_SECRET_KEY
@@ -39,13 +41,14 @@ Here are the links for the developer websites:
 - [twitter](https://apps.twitter.com/)
 - [linkedin](https://www.linkedin.com/secure/developer)
 
-After that, you would need to build an application that will allow you to retrieve user tokens. If you're primarily working on PHP you can use the following libraries to acquire user tokens:
+You can acquire oauth tokens by creating an app in the websites that I mentioned above. If you're primarily working on PHP you can use the following libraries to acquire user tokens:
 
 - [thephpleagues/oauth2-client](https://github.com/thephpleague/oauth2-client) - this supports facebook and linkedin.
 - [thmOAuth](https://github.com/themattharris/tmhOAuth) - supports twitter.
 
 Next, copy the contents of the `Rakefile` in this repository and add them to the `Rakefile` of your octopress installation.
 
+Note that both methods require you to create an app which will serve as the connection to your social account.
 
 ###How to Use
 

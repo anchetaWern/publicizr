@@ -16,7 +16,7 @@ task :publish, :content do |t, args|
 
     if config['use_ahead'] == true
 
-      uri = URI.parse("http://ec2-54-68-251-216.us-west-2.compute.amazonaws.com")
+      uri = URI.parse(config['ahead_base_url'])
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = false
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
